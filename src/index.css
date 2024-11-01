@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bg-color-principal:hover{
+  background-color: #F4F1EA;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.option {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox {
+  position: relative;
+  height: 28px;
+  width: 28px;
+  background-color: transparent;
+  border: 2px solid var(--bg-active);
+  transition: all 0.15s;
+}
+
+.option input:focus-visible~.checkbox {
+  border: 2px solid var(--bg-active);
+}
+
+.option:hover input~.checkbox {
+  border: 2px solid var(--bg-active);
+}
+
+
+.checkbox1:after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 3px;
+  width: 0px;
+  height: 0px;
+  border: solid var(--bg-active);
+  border-width: 2px 2px 0 0;
+  opacity: 0;
+  transform-origin: left top;
+  transform: scaleX(-1) rotate(135deg);
+  transition: width 0.08s ease 0.1s, height 0.1s ease, border-color 0.3s ease,
+    opacity 0.1s ease 0.2s, border-width 0.1s ease;
+}
+
+.option input:checked~.checkbox1:after {
+  opacity: 1;
+  width: 10px;
+  height: 18px;
+  border-color: var(--bg-active);
+  transition: width 0.1s ease, height 0.08s ease 0.1s, border-color 0.3s ease,
+    border-width 0.1s ease;
+}

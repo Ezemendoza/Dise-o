@@ -1,0 +1,17 @@
+
+.slick-dots li {
+    width: 86px !important; /* Ancho de cada punto */
+    height: 36px; /* Altura de cada punto */
+    margin: 0 5px; /* Espaciado lateral */
+}
+
+.slick-next:before{
+    color:rgb(202 138 4 / var(--tw-text-opacity));
+}
+.slick-prev:before{
+    color:rgb(202 138 4 / var(--tw-text-opacity));
+}
+
+.slick-slider{
+    max-width: 1028px !important;
+}
